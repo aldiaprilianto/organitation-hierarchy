@@ -34,7 +34,7 @@ func main() {
 	// Middleware untuk menangani CORS
 	r.Use(func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
-		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, OPTION, POST, DELETE, PUT")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "*")
 		c.Writer.Header().Set("Access-Control-Max-Age", "86400")
 		if c.Request.Method == http.MethodOptions {
