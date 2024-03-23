@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/aldiaprilianto/takana/config"
 	"github.com/aldiaprilianto/takana/router"
+	"github.com/aldiaprilianto/takana/utility"
 
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
@@ -28,6 +29,9 @@ func main() {
 
 	/* Create Context */
 	r := gin.Default()
+
+	/* Middleware CORS */
+	r.Use(utility.CORS())
 
 	/* Routes */
 	routing.SetupRoutes(r)
